@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/app5.css"> -->
+</head>
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Hanuman:wght@300;400;700&family=Julee&family=Koulen&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono&family=Roboto+Slab&family=Roboto:wght@300;400;700&family=Rubik:wght@500&family=Shadows+Into+Light&family=Shantell+Sans:wght@400;500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: auto;
+    /* height: auto; */
+    background-color: #fff;
+    position: relative;
+}
+/* .container .header{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+} */
+.container .content{
+    width: 80%;
+    height: 100%;
+    /* background-color: #EFF5F5; */
+    margin: auto;
+    padding: 5px 13px;
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid #000;
+}
+/* ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000; 
+  } */
+   
+/* @left-menu */
+.left-menu{
+    width: 207px;
+    height: 100%;
+    background-color: #DDDDDD;
+    padding: 10px 10px;
+    position: fixed;
+    z-index: 999;
+    border-radius: 5px;
+    /* overflow: hidden; */
+}
+.left-menu label{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.left-menu label:hover{
+    cursor: pointer;
+}
+.left-menu input{
+    padding: 7px 10px;
+    border-radius: 6px;
+    border: 1px solid #B2B2B2;
+    margin: 7px 0px;
+}
+.left-menu button{
+    padding: 7px 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #B2B2B2;
+    cursor: pointer;
+}
+.left-menu button:hover{
+    background-color: #2F58CD;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+
+/* @right-menu */
+.content .right-menu{
+    width: 79%;
+    min-height: 100vh;
+    background-color: #EFF5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    left: 225px;
+    /* display: block; */
+}
+.content .right-menu .top-menu{
+    width: 98%;
+    /* height: 405px; */
+    height: auto;
+    /* background-color: #DC5F00; */
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+.top-menu .menu-box{
+    width: 23.3%;
+    /* height: 100%; */
+    background-color: #FCFDF2;
+    box-shadow: 0px 2px 4px 1px rgb(0 0 0 / 41%);
+    -webkit-box-shadow: 0px 2px 4px 1px rgb(0 0 0 / 41%);
+    -moz-box-shadow: 0px 2px 4px 1px rgb(0 0 0 / 41%);
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* @image */
+.menu-box .image{
+    width: 100%;
+    /* height: 60%; */
+    /* background-color: rgb(231, 48, 48); */
+    padding: 40px 2px 20px 5px;
+}
+.menu-box .image .book{
+    width: 155px;
+    height: 180px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.book img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+.menu-box:hover img{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* @description */
+.menu-box .description{
+    width: 100%;
+    height: 40%;
+    /* background-color: rgb(42, 165, 108); */
+    padding: 5px;
+    overflow: hidden;
+}
+.description a{
+    text-decoration: none;
+}
+.description h1{
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    /* text-decoration: none; */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+           line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.description h1:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.description p{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding: 13px 0px;
+}
+.description p:hover{
+    text-decoration: underline;
+}
+.description span{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.description h4{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 15px;
+    text-decoration: underline;
+    color: #472183;
+}
+    </style>
+
+    <div class="container">
+        <div class="content">
+                <!-- @left-menu -->
+                <div class="left-menu">
+                    <div class="all">
+                        <label for="name">Name: </label>
+                        <input type="text" placeholder="Book name" id="name">
+
+                        <label for="category">Category: </label>
+                        <input type="text" placeholder="Code" id="category">
+
+                        <label for="price">Price: </label>
+                        <input type="text" placeholder="0 riel" id="price">
+
+                        <button type="submit" id="add" onclick="addBook()">Add</button>
+                    </div>
+                </div>
+                <!-- @right-menu -->
+                <div class="right-menu">
+            <!-- </div> -->
+<!-- @top-menu  -->
+                <!-- <div class="top-menu">
+                   
+                    <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                                <a href="#">
+                                    <img src="images/harry-p1.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Sorcerer's Stone™</h1>
+                            </a>
+                            <a href="#"> <p>Album ID: 10 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                                <a href="#">
+                                    <img src="images/harry-p2.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Chamber of Secrets™</h1>
+                            </a>
+                            <a href="#"><p>Album ID: 12 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                    </div>
+                
+                    <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                               <a href="#">
+                                    <a href="#">
+                                        <img src="images/harry-p3.jpg" alt="">
+                                    </a>
+                               </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Prisoner of Azkaban™</h1>
+                            </a>
+                            <a href="#"><p>Album ID: 15 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                    </div>
+                   
+                     <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                                <a href="#">
+                                    <a href="#">
+                                        <img src="images/harry-p4.jpg" alt="">
+                                    </a>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Goblet of Fire™</h1>
+                            </a>
+                            <a href="#"><p>Album ID: 18 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                     </div>
+                </div>
+
+<!-- @middle1-menu  -->
+                <!-- <div class="top-menu">
+                  
+                     <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                                <a href="#">
+                                    <img src="images/harry-p5.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Deathly Hallows™ - Part 1</h1>
+                            </a>
+                            <a href="#"><p>Album ID: 20 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                                <a href="#">
+                                    <img src="images/harry-p6.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Deathly Hallows™ - Part 2</h1>
+                            </a>
+                            <a href="#"><p>Album ID: 24 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                               <a href="#">
+                                    <a href="#">
+                                        <img src="images/harry-p7.jpg" alt="">
+                                    </a>
+                               </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Half-Blood Prince™</h1>
+                            </a>
+                            <a href="#"><p>Album ID: 26 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                    </div>
+                    
+                     <div class="menu-box">
+                        <div class="image">
+                            <div class="book">
+                                <a href="#">
+                                    <a href="#">
+                                        <img src="images/harry-p8.jpg" alt="">
+                                    </a>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <a href="#">
+                                <h1>Harry Potter and the Order of Phoenix™</h1>
+                            </a>
+                            <a href="#"><p>Album ID: 30 000 Riel</p></a>
+                            <span>Category: 1</span>
+                            <a href="detail.html" target="_blank"><h4>See</h4></a>
+                        </div>
+                     </div>
+                </div>
+
+<!-- @middle2-menu  -->
+                <!-- <div class="top-menu">
+                    
+                    <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                               <a href="#">
+                                   <img src="images/Eng-p1.jpg" alt="">
+                               </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>Reading and Vocabulary Development 1: Facts & Figures</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 20 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>
+                       </div>
+                   </div>
+                
+                   <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                               <a href="#">
+                                   <img src="images/Eng-p2.jpg" alt="">
+                               </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>Reading and Vocabulary Development 2: Thoughts & Notion</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 24 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>
+                       </div>
+                   </div>
+                 
+                   <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                              <a href="#">
+                                   <a href="#">
+                                       <img src="images/Eng-p3.jpg" alt="">
+                                   </a>
+                              </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>Reading and Vocabulary Development 3: Cause & Effect</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 26 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>
+                       </div>
+                   </div>
+                    
+                    <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                               <a href="#">
+                                   <a href="#">
+                                       <img src="images/Eng-p4.jpg" alt="">
+                                   </a>
+                               </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>Reading and Vocabulary Development 4: Concepts & Comments</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 30 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>
+                       </div>
+                    </div>
+               </div> --> 
+
+<!-- @bottom-menu  -->
+                <div class="top-menu">
+                   
+                    <!-- <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                               <a href="#">
+                                   <img src="images/child-p1.jpg" alt="">
+                               </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>Find Spot at Halloween: A Lift-The-Flap Story</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 20 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>
+                       </div>
+                   </div>
+                   
+                   <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                               <a href="#">
+                                   <img src="images/child-p2.jpg" alt="">
+                               </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>Campbell Books: I Like to be Kind</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 24 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>
+                       </div>
+                   </div>
+             
+                   <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                              <a href="#">
+                                   <a href="#">
+                                       <img src="images/child-p3.jpg" alt="">
+                                   </a>
+                              </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>Macmillan Children's Books: Hello Friend!</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 26 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>
+                       </div>
+                   </div>
+                    
+                    <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                               <a href="#">
+                                   <a href="#">
+                                       <img src="images/child-p4.jpg" alt="">
+                                   </a>
+                               </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>What the Ladybird Heard at the Seaside</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 30 000 Riel</p></a>
+                           <span>Category: 1</span>
+                           <a href="detail.html" target="_blank"><h4>See</h4></a>   
+                       </div>
+                    </div> -->
+               </div>
+        </div>
+    </div>
+    <script>
+        const name = document.getElementById("name");
+        const category = document.getElementById("category");
+        const price = document.getElementById("price")
+        const add = document.getElementById("add")
+
+        addBook();
+        
+        function addBook(){
+            fetch("https://jsonplaceholder.typicode.com/photos").then (async (res) =>{
+                let data = await res.json();
+                let tmp = "";
+                // alert("ok");
+                for(let i=0;i<100;i++){
+                    
+                    tmp = `
+                    <div class="menu-box">
+                       <div class="image">
+                           <div class="book">
+                               <a href="#">
+                                   <img src="${data[i]["thumbnailUrl"]}" alt="">
+                               </a>
+                           </div>
+                       </div>
+                       <div class="description">
+                           <a href="#">
+                               <h1>${data[i]["title"]}</h1>
+                           </a>
+                           <a href="#"><p>Album ID: 20 000 Riel</p></a>
+                           <span>Category: ${data[i]["id"]}</span>
+                           <a href="./detail?id=${data[i]["id"]}" target="_blank"><h4>See</h4></a>
+                       </div>
+                   </div>
+                    `;
+                    document.getElementsByClassName("top-menu")[0].innerHTML += tmp;
+                }
+                
+            }).catch((err) => {
+                // alert("error");
+            });
+            
+        }
+    </script>
+</body>
+</html>
